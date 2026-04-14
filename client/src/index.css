@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+  body {
+    @apply font-sans bg-gray-50 text-gray-900 dark:bg-dark-bg dark:text-dark-text transition-colors duration-300;
+  }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-gray-100 dark:bg-dark-surface; }
+  ::-webkit-scrollbar-thumb { @apply bg-gray-300 dark:bg-gray-600 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-primary-500; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-500 hover:bg-primary-600 active:bg-primary-700 text-white font-semibold px-6 py-2.5 rounded-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2;
+  }
+  .btn-secondary {
+    @apply bg-gray-100 hover:bg-gray-200 dark:bg-dark-surface dark:hover:bg-dark-border text-gray-700 dark:text-gray-300 font-semibold px-6 py-2.5 rounded-xl transition-all duration-200 flex items-center justify-center gap-2;
+  }
+  .btn-outline {
+    @apply border-2 border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white font-semibold px-6 py-2.5 rounded-xl transition-all duration-200 flex items-center justify-center gap-2;
+  }
+  .card {
+    @apply bg-white dark:bg-dark-surface rounded-2xl shadow-sm border border-gray-100 dark:border-dark-border transition-all duration-200;
+  }
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-dark-border bg-white dark:bg-dark-surface text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200;
+  }
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  .section-title {
+    @apply text-2xl md:text-3xl font-display font-bold text-gray-900 dark:text-white;
+  }
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .product-card {
+    @apply card overflow-hidden cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all duration-300;
+  }
+  .star-rating {
+    @apply flex items-center gap-0.5;
+  }
+}
+
+/* Skeleton loading */
+.skeleton {
+  @apply bg-gray-200 dark:bg-gray-700 animate-pulse rounded;
+}
+
+/* Slick carousel overrides */
+.slick-dots li button:before {
+  @apply text-primary-500;
+}
+.slick-prev, .slick-next {
+  @apply z-10;
+}
